@@ -15,7 +15,7 @@ make bash
 // Generate the key
 php artisan key:generate
 // It's everything!
-// You can access the api in: http://localhost:8040/
+// You can access the api in: http://localhost:8060/
 ```
 ## Framework
 - [Laravel](https://laravel.com/)

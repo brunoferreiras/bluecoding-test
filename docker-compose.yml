@@ -34,6 +34,8 @@ services:
             - ./.docker/php/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
         restart: unless-stopped
         tty: true
+        ports:
+            - "3000:3000"
         environment:
             - APP_ENV=local
         networks:
@@ -52,10 +54,10 @@ services:
             - ./.data/mysql:/var/lib/mysql
         restart: unless-stopped
         environment:
-            MYSQL_DATABASE: tech
-            MYSQL_USER: tech
-            MYSQL_PASSWORD: tech
-            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_USER: ${DB_USERNAME}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
         networks:
             - tech_network
 

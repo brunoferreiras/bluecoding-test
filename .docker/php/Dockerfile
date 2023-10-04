@@ -36,6 +36,8 @@ RUN apk update && \
     intl \
     pdo_mysql && \
     # Install Supervisor
+    # Install Node and NPM
+    apk add nodejs npm && \
     apk add supervisor && \
     # Installing Composer
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \

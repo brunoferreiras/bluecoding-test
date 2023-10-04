@@ -1,6 +1,5 @@
 .git
 .idea
-.env
 .data
 docker-composer.yml
 bootstrap/cache/*
