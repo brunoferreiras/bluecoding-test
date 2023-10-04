@@ -14,6 +14,12 @@ make up
 make bash
 // Generate the key
 php artisan key:generate
+// Run the migrations
+php artisan migrate
+// Run the npm install
+npm install
+// Run the npm run dev
+npm run dev
 // It's everything!
 // You can access the api in: http://localhost:8060/
 ```
@@ -22,3 +28,7 @@ php artisan key:generate
 ## Database
 - MySQL 8.0
 - Redis 6.2
+
+## Demo
+
+![Demo](./docs/demo.mp4)

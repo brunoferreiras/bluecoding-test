@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 export function ModalGif({ gif }) {
     const [showModal, setShowModal] = useState(false);
-    console.log('active: ', gif)
 
     useEffect(() => {
         if (gif) {
@@ -35,7 +34,7 @@ export function ModalGif({ gif }) {
                                     </button>
                                 </div>
                                 {/*body*/}
-                                <div className="relative p-6 flex-auto">
+                                <div className="relative p-6 flex-auto items-center">
                                     <img
                                         src={gif?.images?.original?.url}
                                         className="h-auto max-w-full"
