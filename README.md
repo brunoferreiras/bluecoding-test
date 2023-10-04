@@ -8,6 +8,7 @@ Execute this commands to start the application:
 ```bash
 // Create the .env file
 cp .env.example .env
+// Update the variable GIPHY_API_KEY in .env file
 // Start all containers docker
 make up
 // Enter in container
