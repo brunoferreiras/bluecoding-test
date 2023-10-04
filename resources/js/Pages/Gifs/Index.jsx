@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Head } from '@inertiajs/react'
 
 import Layout from '../Layouts/MainLayout'
 import { ListGifs } from './components/ListGifs'
 
-export default function Index() {
+export default function Index({ initialSearch, initialData }) {
     const [search, setSearch] = useState('')
     const [isLoading, setIsLoading] = useState(false)
     const [gifs, setGifs] = useState([])
@@ -16,6 +16,14 @@ export default function Index() {
         setGifs(previosGifs => offset === 0 ? data : [...previosGifs, ...data])
         setIsLoading(false)
     }
+
+    useEffect(() => {
+        if (initialSearch && initialData) {
+            setSearch(initialSearch)
+            setGifs(initialData)
+        }
+    }, [initialSearch, initialData])
+
     return (
         <Layout>
             <Head title="Home" />
@@ -28,6 +36,7 @@ export default function Index() {
                     <input
                         className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
                         type="text"
+                        value={search}
                         placeholder="Try searching for Cats, Dogs, or Trending GIFs"
                         onChange={(e) => setSearch(e.target.value)}
                     />

@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [GifsController::class, 'index']);
-Route::get('/gifs/search', [GifsController::class, 'search']);
+Route::get('/', [GifsController::class, 'index'])->name('home');
+Route::get('/gifs/search', [GifsController::class, 'search'])->name('gifs.search');
+Route::get('/gifs/history', [GifsController::class, 'history'])->name('gifs.history');
+Route::delete('/gifs/history/{search}', [GifsController::class, 'removeBySearch'])->name('gifs.removeBySearch');

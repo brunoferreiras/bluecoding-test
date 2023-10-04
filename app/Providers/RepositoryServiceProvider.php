@@ -19,6 +19,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        $this->app->bind(\App\Repositories\GifRepository::class, \App\Repositories\Eloquent\GifRepositoryEloquent::class);
         //:end-bindings:
     }
 }
