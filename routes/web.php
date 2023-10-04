@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [GifsController::class, 'index']);
+Route::get('/gifs/search', [GifsController::class, 'search']);
